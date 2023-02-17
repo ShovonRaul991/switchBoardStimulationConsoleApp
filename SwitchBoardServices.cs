@@ -11,10 +11,11 @@ namespace switchBoardStimulationConsoleApp
 {
     class SwitchBoardServices : IAppliance 
     {
-        public List<Appliance> ListOfappliances = new();
+        private List<Appliance> ListOfappliances = new();
         public FanServices FanService = new();
         public AcServices AcService = new();
         public BulbServices BulbService = new();
+        
         public SwitchBoardServices() 
         {
             int switches = UserInputHandling.UserInput("Switches");
@@ -33,34 +34,37 @@ namespace switchBoardStimulationConsoleApp
                 if(ChooseAppliance == 1 )
                 {
 
-                    FanService.ListOfFans.Add(new Fan() { Name = "Appliance " + id + " fan" });
-                    ListOfappliances.Add(FanService.ListOfFans[fanId]);
+                    FanService.getAllFan().Add(new Fan() { Name = "Appliance " + id + " fan" });
+                    ListOfappliances.Add(FanService.getAllFan()[fanId]);
+                   
                     fanId++;
                     id++;
                    
                 }
                 else if(ChooseAppliance == 2 )
                 {
-                    AcService.ListOfAcs.Add(new Ac() { Name = "Appliance " + id + " AC" });
-                    ListOfappliances.Add(AcService.ListOfAcs[acId]);
+                    AcService.getAllAC().Add(new Ac() { Name = "Appliance " + id + " AC" });
+                    ListOfappliances.Add(AcService.getAllAC()[acId]);
                     acId++;
                     id++;
                 }
                 else if(ChooseAppliance == 3 )
                 {
-                    BulbService.ListOfBulbs.Add(new Bulb() { Name = "Appliance " + id + " Bulb" });
-                    ListOfappliances.Add(BulbService.ListOfBulbs[bulbId]);
+                    BulbService.getAllBulb().Add(new Bulb() { Name = "Appliance " + id + " Bulb" });
+                    ListOfappliances.Add(BulbService.getAllBulb()[bulbId]);
                     bulbId++;
                     id++;
                 }
                 switches--;
             }
             
-        }
 
+        }
+        
         public List<Appliance> GetAppliance()
         {
             return ListOfappliances;
+            
         }
 
 

@@ -11,8 +11,11 @@ namespace switchBoardStimulationConsoleApp.Services
 
     class BulbServices
     {
-        public List<Bulb> ListOfBulbs = new();
+        private List<Bulb> ListOfBulbs = new();
 
-
+        public List<Bulb> getAllBulb()
+        {
+            return ListOfBulbs;
+        }
     }
 }

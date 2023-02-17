@@ -10,8 +10,12 @@ namespace switchBoardStimulationConsoleApp.Services
 
     class FanServices
     {
-        public List<Fan> ListOfFans = new();
+        private List<Fan> ListOfFans = new();
 
 
+        public List<Fan> getAllFan()
+        {
+            return ListOfFans;
+        }
     }
 }
