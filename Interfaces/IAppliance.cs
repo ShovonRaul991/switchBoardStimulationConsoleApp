@@ -8,7 +8,9 @@ namespace switchBoardStimulationConsoleApp.Interfaces
 {
     interface IAppliance
     {
-        string StateChange();
-        string CheckState();
+        string StateChange(string id);
+        string CheckState(string id);
+
+        string AskChange(string id);
     }
 }
