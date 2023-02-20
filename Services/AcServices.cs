@@ -10,19 +10,6 @@ namespace switchBoardStimulationConsoleApp.Services
 
     class AcServices
     {
-        private List<Ac> ListOfAcs = new();
-
         
-        public List<Ac> getAllAC()
-        {
-            return ListOfAcs;
-        }
-
-        /*
-        public void servicing(string id)
-        {
-            Console.WriteLine("I am shovon raul for servicing "+id);
-        }
-        */
     }
 }
